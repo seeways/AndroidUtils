@@ -1,6 +1,7 @@
 package com.jty.androidutils.utils;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,6 +13,29 @@ import java.io.IOException;
  */
 
 public class ImageUtils {
+    /**
+     * 根据路径得到原图的宽高
+     * @param path 图片路径
+     * @return
+     */
+    public static int[] getImgWidthAndHeight(String path){
+
+        //获取Options对象
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        //仅做解码处理，不加载到内存
+        options.inJustDecodeBounds = true;
+        //解析文件
+        BitmapFactory.decodeFile(path, options);
+        //获取宽高
+        int imgWidth = options.outWidth;
+        int imgHeight = options.outHeight;
+        int[] wh = {imgWidth,imgHeight};
+        return wh;
+    }
+
+
+
+
 
     /**
      * 功能：将签好名的bitmap保存到sd卡
@@ -47,6 +71,7 @@ public class ImageUtils {
             e.printStackTrace();
         }
     }
+
 
 
 
