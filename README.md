@@ -25,18 +25,18 @@ taoyuan's AndroidUtils
 - 判断设备是否root
     + boolean isDeviceRooted()
 - 获取设备系统版本号  
-    + int getSDKVersion()
+   + int getSDKVersion()
 - 获取设备AndroidID
-    + String getAndroidID()
+   + String getAndroidID()
 - 获取设备MAC地址
-    + String getMacAddress()
+   + String getMacAddress()
 - 获取设备厂商
-    + String getManufacturer()
+   + String getManufacturer()
 - 获取设备型号
-    + String getModel()
+   + String getModel()
 - 包含了一个静态内部类ShellUtils
-    + execCmd: 是否是在root下执行命令
-    + 主要是用命令的
+   + execCmd: 是否是在root下执行命令
+   + 主要是用命令的，这个目前我几乎用不到，主要是当工具类用
     
 # 2017.3.7
 创建版本
