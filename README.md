@@ -1,8 +1,18 @@
 # AndroidUtils
 taoyuan's AndroidUtils
+## 使用
+1. 根目录下
+```java
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
 
-
-
+2. 添加依赖
+ compile 'com.github.seeways:AndroidUtils:1.1.5'
 
 
 # 2017.3.7
