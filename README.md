@@ -17,8 +17,27 @@ taoyuan's AndroidUtils
 
 # 2017.3.15
 新增DeviceUtils
+
 感谢Blankj，对Blankj的代码作了部分修改
 
+1. `Utils.init(Context context);`
+2. 使用
+- 判断设备是否root
+    + boolean isDeviceRooted()
+- 获取设备系统版本号  
+    + int getSDKVersion()
+- 获取设备AndroidID
+    + String getAndroidID()
+- 获取设备MAC地址
+    + String getMacAddress()
+- 获取设备厂商
+    + String getManufacturer()
+- 获取设备型号
+    + String getModel()
+- 包含了一个静态内部类ShellUtils
+    + execCmd: 是否是在root下执行命令
+    + 主要是用命令的
+    
 # 2017.3.7
 创建版本
 
