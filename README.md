@@ -15,6 +15,10 @@ taoyuan's AndroidUtils
  compile 'com.github.seeways:AndroidUtils:1.1.5'
 
 
+# 2017.3.15
+新增DeviceUtils
+感谢Blankj，对Blankj的代码作了部分修改
+
 # 2017.3.7
 创建版本
 
