@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="app_name">AndroidUtils</string>
 	<string name="dialog_title_tip">小貼士</string>
 	<string name="confirm">確認</string>
 	<string name="cancel">取消</string>
