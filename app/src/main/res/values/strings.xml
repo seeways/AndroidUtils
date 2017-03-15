@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">AndroidUtils</string>
-    <string name="dialog_title_tip">TIP</string>
-    <string name="confirm">Confirm</string>
-    <string name="cancel">Cancel</string>
-</resources>

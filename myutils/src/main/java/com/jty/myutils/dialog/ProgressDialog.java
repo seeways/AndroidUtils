@@ -78,18 +78,20 @@ public class ProgressDialog {
      * @return
      */
     public static Dialog loadingDialog2(Context context, String msg, boolean isTransBg, boolean isCancelable) {
+
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.dialog_loading_2, null);
         RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.dialog_view);
 
-
+        //图片
         ImageView spaceshipImage = (ImageView) v.findViewById(R.id.img);
-
+        //提示文字
         TextView tipTextView = (TextView) v.findViewById(R.id.tipTextView);
-
+        //旋转动画
         Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_animation);
-
+        //显示动画
         spaceshipImage.startAnimation(hyperspaceJumpAnimation);
+        //使用默认值
         if(msg!=null){
             tipTextView.setText(msg);// set info
         }

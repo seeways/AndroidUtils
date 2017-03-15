@@ -23,9 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_centerInParent="true"
         android:text="加载中..."
-        android:maxLines="1"
+        android:layout_marginTop="0dp"
+        android:layout_centerInParent="true"
+        android:singleLine="true"
         android:ellipsize="middle"
         android:textSize="16sp" />
 </RelativeLayout>
