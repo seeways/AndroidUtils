@@ -8,7 +8,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-/** 
+/**
+ * 屏幕管理类
  * @author jty 
  */
 

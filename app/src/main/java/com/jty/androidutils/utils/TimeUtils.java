@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
+ * Time管理类
  * Created by JTY on 2016/8/12 0012.
  */
 public class TimeUtils {
@@ -15,16 +16,16 @@ public class TimeUtils {
     }
     //获得当前时间
     public static String getTime(){
-        String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        return time;
+
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 
 
     //获取东八区区时
-    static Calendar chinaCalendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));
-    static int year = chinaCalendar.get(Calendar.YEAR);
-    static int month = chinaCalendar.get(Calendar.MONTH) + 1;
-    static int days = chinaCalendar.get(Calendar.DAY_OF_MONTH);
+    private static Calendar chinaCalendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));
+    private static int year = chinaCalendar.get(Calendar.YEAR);
+    private static int month = chinaCalendar.get(Calendar.MONTH) + 1;
+    private static int days = chinaCalendar.get(Calendar.DAY_OF_MONTH);
 
     //获取年，年月，年月日
     public static String getDayTime() {

@@ -42,7 +42,6 @@ public class ImageUtils {
      * @param bitmap
      */
     public static void saveImg(String savePath,Bitmap bitmap,String imgName) {
-        //"/sdcard/IYIN"
         File file = new File(savePath);//要保存的文件地址和文件名
         //没有文件的话创建一个
         if (!file.exists()) {
@@ -52,11 +51,9 @@ public class ImageUtils {
 
         //签名图片"hand_sign_" + TimeUtils.getTimeStemp() + ".png"
         File imageFile = new File(file,imgName);
-        L.e("file:"+file);
         try {
             if(!imageFile.exists()){
-                boolean flag = imageFile.createNewFile();
-                L.e("flag:"+flag);
+                imageFile.createNewFile();
             }
 
 

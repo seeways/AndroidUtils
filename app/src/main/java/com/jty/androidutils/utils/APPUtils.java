@@ -9,11 +9,12 @@ import android.content.pm.PackageInfo;
  */
 
 public class APPUtils {
-	
-	/** 
-     * 获取应用程序名称 
-     */ 
-	
+
+	/**
+	 * 获取应用程序名称
+	 * @param context
+	 * @return
+     */
 	public static String getAppName(Context context){
 		try{
 			int labelRes = context.getPackageManager()

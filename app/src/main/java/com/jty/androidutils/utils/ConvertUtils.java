@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
 
 public class ConvertUtils {
     /**
-     * 将BitMap转换为Bytes
+     * BitMap to Bytes
      *
      * @param bm
      * @return
@@ -20,4 +20,15 @@ public class ConvertUtils {
         bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
     }
+
+    /**
+     * String to int
+     * @param string
+     * @return
+     */
+    public static int String2Int(String string){
+        return Integer.parseInt(string);
+    }
+
+
 }

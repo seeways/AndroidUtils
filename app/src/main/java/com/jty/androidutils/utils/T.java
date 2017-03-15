@@ -42,29 +42,29 @@ public class T {
             Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
-//    /**
-//     * 长时间显示Toast
-//     *
-//     * @param context
-//     * @param message
-//     */
-//    public static void showLong(Context context, CharSequence message)
-//    {
-//        if (isShow)
-//            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-//    }
-//
-//    /**
-//     * 长时间显示Toast
-//     *
-//     * @param context
-//     * @param message
-//     */
-//    public static void showLong(Context context, int message)
-//    {
-//        if (isShow)
-//            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-//    }
+    /**
+     * 长时间显示Toast
+     *
+     * @param context
+     * @param message
+     */
+    public static void showLong(Context context, CharSequence message)
+    {
+        if (isShow)
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * 长时间显示Toast
+     *
+     * @param context
+     * @param message
+     */
+    public static void showLong(Context context, int message)
+    {
+        if (isShow)
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+    }
 
 
 }

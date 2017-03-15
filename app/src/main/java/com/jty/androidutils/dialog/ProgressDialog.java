@@ -18,7 +18,7 @@ import com.jty.androidutils.R;
 
 /**
  * Created by JTY on 2017/3/9 0009
- * 进度条帮助类
+ * Loading帮助类
  */
 
 public class ProgressDialog {
