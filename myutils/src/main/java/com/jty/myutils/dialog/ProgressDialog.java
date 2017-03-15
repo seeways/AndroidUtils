@@ -90,8 +90,9 @@ public class ProgressDialog {
         Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_animation);
 
         spaceshipImage.startAnimation(hyperspaceJumpAnimation);
-        tipTextView.setText(msg);
-
+        if(msg!=null){
+            tipTextView.setText(msg);// set info
+        }
         Dialog loadingDialog = new Dialog(context, isTransBg ? R.style.TransDialogStyle : R.style.MyDialogStyle2);    // 创建自定义样式dialog
         loadingDialog.setContentView(layout);
         loadingDialog.setCancelable(isCancelable);
