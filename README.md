@@ -17,7 +17,7 @@ taoyuan's AndroidUtils
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:1.1.5'`
+`compile 'com.github.seeways:AndroidUtils:1.1.6'`
 
 
 # 2017.3.15
