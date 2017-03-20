@@ -17,7 +17,61 @@ taoyuan's AndroidUtils
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:1.1.6'`
+`compile 'com.github.seeways:AndroidUtils:1.1.7'`
+
+# 2017.3.20
+新增EncodeUtils，EncryptUtils，StringUtils
+
+- 字符串工具类 StringUtils
+    + 判空操作 `boolean isEmpty(String s)`
+    + 字符串是否相等(a String 1,b String2,isIgnoreCase是否忽略大小写)
+    + `isEquals(String a, String b,boolean isIgnoreCase)`
+
+- 编码工具类 EncodeUtils
+    + 默认URL编码(UTF-8) `String urlDecode(String input)`
+    + 自定义字符集编码 `String urlDecode(String input, String charset)`
+    + Base64编码 `byte[] base64Encode(byte[] input)`
+    + Base64解码 `byte[] base64Decode(byte[] input)`
+    + Base64自定义flags编码 `byte[] base64Encode(byte[] input,int flags)`
+    + Base64自定义flags解码 ` byte[] base64Decode(byte[] input,int flags)`
+    + Html编码 `String htmlEncode(CharSequence input)`
+    + Html解码 `CharSequence htmlDecode(String input)`
+
+- 加密工具类 EncryptUtils 
+    + MD5系列
+        * String To MD5 `String String2Md5(String data)`
+        * String To MD5 `String String2Md5(String data, String salt)`
+        * byte To MD5 `String byte2Md5(byte[] data)`
+        * byte To MD5 `String byte2Md5(byte[] data, byte[] salt)`
+        * MD5 进行hash加密 `byte[] encryptMD5(byte[] data)`
+    + AES系列
+        * 关于AES要解释起来也不是一句两句能解释的，稍后我会写篇博客来阐述
+        * 博客：
+        * 简书：
+        * 
+        * 配合Base64转码是常用的，转16进制可以理解为MD5运算
+        * 
+        * 默认AES加密 `byte[] AESEncrypt(byte[] data, byte[] key)`
+        * AES加密后转为Base64编码 `byte[] AES2Base64(byte[] data, byte[] key)`
+        * AES加密后转为16进制 `String AES2Hex(byte[] data, byte[] key)`
+        * 默认AES解密 `byte[] AESDecrypt(byte[] data, byte[] key)`
+        * AES解密Base64编码密文 `byte[] decryptBase64AES(byte[] data, byte[] key)`
+        * AES解密16进制密文 `byte[] decryptHexAES(String data, byte[] key)`
+
+    + SHA系列(SHA1,SHA256,SHA512)
+        * SHA1加密 
+            - `String SHA1Encrypt(String data)`
+            - `String SHA1Encrypt(byte[] data)`
+            - `byte[] SHA1Hash(byte[] data)`
+        * SHA256加密
+            - `String SHA256Encrypt(String data)`
+            - `String SHA256Encrypt(byte[] data)`
+            - `byte[] SHA256Hash(byte[] data)`
+        * SHA512加密
+            - `String SHA512Encrypt(String data)`
+            - `String SHA512Encrypt(byte[] data)`
+            - `byte[] SHA512Hash(byte[] data)`
+
 
 
 # 2017.3.15

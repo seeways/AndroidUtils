@@ -2,6 +2,7 @@ package com.jty.myutils.utils;
 
 import android.os.Build;
 import android.text.Html;
+import android.util.Base64;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -9,13 +10,13 @@ import java.net.URLDecoder;
 /**
  * @author TaoYuan
  * @time 2017/3/20 0020
- * @desc
+ * @desc 编码工具类
  */
 
 public class EncodeUtils {
 
     /**
-     * 默认编码
+     * 默认URL编码
      * @param input
      * @return
      */
@@ -37,8 +38,33 @@ public class EncodeUtils {
         }
     }
 
+    /** Base64系列 **/
 
+    /**
+     * Base64编码
+     */
+    public static byte[] base64Encode(byte[] input) {
+        return Base64.encode(input, Base64.DEFAULT);
+    }
+    /**
+     * Base64自定义flags编码
+     */
+    public static byte[] base64Encode(byte[] input,int flags) {
+        return Base64.encode(input, flags);
+    }
 
+    /**
+     * Base64解码
+     */
+    public static byte[] base64Decode(byte[] input) {
+        return Base64.decode(input, Base64.DEFAULT);
+    }
+    /**
+     * Base64自定义flags解码
+     */
+    public static byte[] base64Decode(byte[] input,int flags) {
+        return Base64.decode(input, flags);
+    }
 
     /**
      * Html编码
