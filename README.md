@@ -1,7 +1,12 @@
 # AndroidUtils
 taoyuan's AndroidUtils
 ## 使用
-1. 根目录下
+1. project build.gradle下添加：
+
+`maven { url 'https://jitpack.io' }`
+
+如下：
+
 ```java
 	allprojects {
 		repositories {
@@ -11,8 +16,8 @@ taoyuan's AndroidUtils
 	}
 ```
 
-2. 添加依赖
- compile 'com.github.seeways:AndroidUtils:1.1.5'
+2. app build.gradle下添加依赖
+`compile 'com.github.seeways:AndroidUtils:1.1.6'`
 
 
 # 2017.3.15
