@@ -65,8 +65,8 @@ taoyuan's AndroidUtils
         * MD5 进行hash加密 `byte[] encryptMD5(byte[] data)`
     + AES系列
         * 关于AES要解释起来也不是一句两句能解释的，稍后我会写篇博客来阐述
-        * 博客：
-        * 简书：
+        * 博客：https://seeways.github.io/
+        * 简书：http://www.jianshu.com/p/648bac06e663
         * 
         * 配合Base64转码是常用的，转16进制可以理解为MD5运算
         * 
