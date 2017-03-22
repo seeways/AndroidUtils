@@ -7,14 +7,10 @@ import java.io.File;
 
 /** 
  * SD卡辅助类
- * @author jty 
+ * @author TaoYuan
  */
 
 public class SDcardUtils {
-	public SDcardUtils(){
-		//cannot be instantiated
-		throw new UnsupportedOperationException("cannot be instantiated");
-	}
 	/** 
      * 判断SDCard是否可用 
      *  

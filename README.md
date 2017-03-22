@@ -17,7 +17,26 @@ taoyuan's AndroidUtils
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:1.1.7'`
+`compile 'com.github.seeways:AndroidUtils:1.1.8'`
+
+# 2017.3.22
+新增FileUtils
+
+- 文件工具类 FileUtils
+    + 根据文件路径获取文件 `File getFileByPath(String filePath)`
+    + 判断文件是否存在 `boolean isFileExists(String filePath)`
+    + 重命名文件 `boolean renameFile(String filePath, String newName)`
+    + 判断是否是目录 `boolean isDir(String dirPath)`
+    + 判断是否是文件 `boolean isFile(String filePath)`
+    + 如果目录不存在则创建 `boolean createOrExistsDir(String dirPath)`
+    + 获取目录下制定后缀名的文件(忽略大小写) `List<File> listFilesInDirWithFilter(String dirPath, String suffix, boolean isRecursive)`
+    + 文件转bytes `byte[] File2Bytes(String filePath)`
+    + 获取文件大小 `String getFileSize(String PathOrURL)`
+    + 获取文件长度 `long getFileLength(String filePath)`
+    + 获取文件名 `String getFileName(String filePath)`
+    + 获取拓展名 `String getFileExtension(String filePath)`
+
+
 
 # 2017.3.20
 新增EncodeUtils，EncryptUtils，StringUtils
