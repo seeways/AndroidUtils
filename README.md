@@ -1,5 +1,9 @@
 # AndroidUtils
+[![](https://jitpack.io/v/seeways/AndroidUtils.svg)](https://jitpack.io/#seeways/AndroidUtils)
+
 taoyuan's AndroidUtils
+
+
 ## 使用
 1. project build.gradle下添加：
 
