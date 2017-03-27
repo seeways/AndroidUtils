@@ -17,7 +17,90 @@ taoyuan's AndroidUtils
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:1.1.8'`
+`compile 'com.github.seeways:AndroidUtils:1.2.0'`
+
+
+# 2017.3.27
+
+#### 图片帮助类ImageUtils更新部分如下：
+
+- bitmap转成png保存(New:自定义保存)
+    + ~~saveImg(String savePath,Bitmap bitmap,String imgName)~~
+    + 替代方案如下
+    1. 自定义压缩格式(普通用户推荐 `CompressFormat.PNG` )
+    2. 可选是否回收(不写此参数默认false)
+    3. 文件名合并至路径中(亦可直接用File)
+    ```java
+    boolean save(Bitmap src, String filePath, CompressFormat format)
+
+    boolean save(Bitmap src, File file, CompressFormat format)
+
+    boolean save(Bitmap src, String filePath, CompressFormat format, boolean recycle)
+
+    boolean save(Bitmap src, File file, CompressFormat format, boolean recycle)
+    ```
+---
+- bitmap转byteArr `byte[] bitmap2Bytes(Bitmap bitmap, CompressFormat format)`
+- byteArr转bitmap `Bitmap bytes2Bitmap(byte[] bytes)`
+---
+- drawable转bitmap `Bitmap drawable2Bitmap(Drawable drawable)`
+- bitmap转drawable `Drawable bitmap2Drawable(Resources res, Bitmap bitmap)`
+---
+- drawable转byteArr `byte[] drawable2Bytes(Drawable drawable, CompressFormat format)`
+- byteArr转drawable `Drawable bytes2Drawable(Resources res, byte[] bytes)`
+---
+
+- 各种单向获取bitmap() 
+    + view `Bitmap view2Bitmap(View view)`
+    + File `Bitmap getBitmap(File file)`
+    + File `Bitmap getBitmap(File file, int maxWidth, int maxHeight)`
+    + filePath `Bitmap getBitmap(String filePath)`
+    + filePath `Bitmap getBitmap(String filePath, int maxWidth, int maxHeight)`
+    + IO `Bitmap getBitmap(InputStream is)`
+    + IO `Bitmap getBitmap(InputStream is, int maxWidth, int maxHeight)`
+    + byte[] `Bitmap getBitmap(byte[] data, int offset)`
+    + byte[] `Bitmap getBitmap(byte[] data, int offset, int maxWidth, int maxHeight)`
+    + Res `Bitmap getBitmap(Resources res, int id)`
+    + Res `Bitmap getBitmap(Resources res, int id, int maxWidth, int maxHeight)`
+    + 描述 `Bitmap getBitmap(FileDescriptor fd)`
+    + 描述 `Bitmap getBitmap(FileDescriptor fd, int maxWidth, int maxHeight) `
+
+- 缩放图片
+> newWidth,newHeight代表新值
+> scaleWidth，scaleHeight代表基于原来的倍数
+    + `Bitmap scale(Bitmap src, int newWidth, int newHeight) `
+    + `Bitmap scale(Bitmap src, int newWidth, int newHeight, boolean recycle)`
+    + `Bitmap scale(Bitmap src, float scaleWidth, float scaleHeight)`
+    + `Bitmap scale(Bitmap src, float scaleWidth, float scaleHeight, boolean recycle)`
+    
+- 裁剪图片 `Bitmap clip(Bitmap src, int x, int y, int width, int height, boolean recycle)`
+- 倾斜图片 `Bitmap skew(Bitmap src, float kx, float ky, boolean recycle)`
+- 平移倾斜 `Bitmap skew(Bitmap src, float kx, float ky, float px, float py, boolean recycle)`
+- 旋转图片 `Bitmap rotate(Bitmap src, int degrees, float px, float py, boolean recycle)`
+- get旋转角度(90,180,270) `int getRotateDegree(String filePath)`
+- 切为圆形 `Bitmap toRound(Bitmap src, boolean recycle)`
+- 自定义圆角 `Bitmap toRoundCorner(Bitmap src, float radius, boolean recycle)`
+- 添加边框 `Bitmap addFrame(Bitmap src, int borderWidth, int color, boolean recycle)`
+- 添加文字水印 `Bitmap addTextWatermark(Bitmap src, String content, float textSize, int color, float x,float y, boolean recycle)`
+- 添加图片水印 `Bitmap addImageWatermark(Bitmap src, Bitmap watermark, int x, int y, int alpha, boolean recycle)`
+
+--- 
+
+## 压缩相关
+本类根据柯鸡大神的Image改的，除了压缩部分本人与柯鸡大神有冲突，讨论未果，其他都是经过测试的，出于尊重原作者，所以将以下部分的压缩格式提取，由使用者(也就是寡人，对图片的各种处理较多)自行选择。
+
+- 按缩放压缩(原图缩放不涉及压缩格式)
+    + 赋值 `Bitmap compressByScale(Bitmap src, int newWidth, int newHeight, boolean recycle)`
+    + 倍数 `Bitmap compressByScale(Bitmap src, float scaleWidth, float scaleHeight, boolean recycle)`
+
+- 按质量压缩
+    + 质量 `Bitmap compressByQuality(Bitmap src,Bitmap.CompressFormat format, @IntRange(from = 0, to = 100) int quality, boolean recycle)`
+    + 最大值 `Bitmap compressByQuality(Bitmap src, Bitmap.CompressFormat format,long maxByteSize, boolean recycle)`
+
+- 按采样大小压缩
+    + `Bitmap compressBySampleSize(Bitmap src, Bitmap.CompressFormat format,int sampleSize, boolean recycle)`
+    
+
 
 # 2017.3.22
 新增FileUtils
@@ -199,12 +282,13 @@ taoyuan's AndroidUtils
 
     
 ### 图片帮助类ImageUtils
-- 根据路径得到原图的宽高
-    + getImgWidthAndHeight(String path)
-    + return int[]
-    + int width = int[0];int height = int[1];
+- ~~根据路径得到原图的宽高~~
+    + ~~getImgWidthAndHeight(String path)~~
+    + ~~return int[]~~
+    + ~~int width = int[0];int height = int[1];~~
 - bitmap转成png保存到sd卡
-    + saveImg(String savePath,Bitmap bitmap,String imgName)
+    + ~~saveImg(String savePath,Bitmap bitmap,String imgName)~~
+- 请看3.27ImageUtils更新日志
 
 ### 软键盘辅助类KeyBoardUtils
 - 打开软键盘 

@@ -51,6 +51,31 @@ public class FileUtils {
         return file != null && file.exists();
     }
 
+
+    /**
+     * 判断文件是否存在，不存在则判断是否创建成功
+     *
+     * @param filePath 文件路径
+     * @return {@code true}: 存在或创建成功<br>{@code false}: 不存在或创建失败
+     */
+    public static boolean createOrExistsFile(String filePath) {
+        return createOrExistsFile(getFileByPath(filePath));
+    }
+    public static boolean createOrExistsFile(File file) {
+        if (file == null) return false;
+        // 如果存在，是文件则返回true，是目录则返回false
+        if (file.exists()) return file.isFile();
+        if (!createOrExistsDir(file.getParentFile())) return false;
+        try {
+            return file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+
     /**
      * 重命名文件
      *
