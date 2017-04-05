@@ -24,6 +24,11 @@ taoyuan's AndroidUtils
 `compile 'com.github.seeways:AndroidUtils:1.2.0'`
 
 
+#2017.03.30
+
+- 将DialogUtils从utils包转移到dialog包
+- 删除 `@mipmap` 文件夹
+
 # 2017.3.27
 
 #### 图片帮助类ImageUtils更新部分如下：
@@ -72,6 +77,7 @@ taoyuan's AndroidUtils
 - 缩放图片
 > newWidth,newHeight代表新值
 > scaleWidth，scaleHeight代表基于原来的倍数
+
     + `Bitmap scale(Bitmap src, int newWidth, int newHeight) `
     + `Bitmap scale(Bitmap src, int newWidth, int newHeight, boolean recycle)`
     + `Bitmap scale(Bitmap src, float scaleWidth, float scaleHeight)`
@@ -91,7 +97,7 @@ taoyuan's AndroidUtils
 --- 
 
 ## 压缩相关
-本类根据柯鸡大神的Image改的，除了压缩部分本人与柯鸡大神有冲突，讨论未果，其他都是经过测试的，出于尊重原作者，所以将以下部分的压缩格式提取，由使用者(也就是寡人，对图片的各种处理较多)自行选择。
+本类根据BlankJ的Image改的，压缩方法上与原作者就压缩格式有争议，所以将以下部分的压缩格式提取，由使用者选择。
 
 - 按缩放压缩(原图缩放不涉及压缩格式)
     + 赋值 `Bitmap compressByScale(Bitmap src, int newWidth, int newHeight, boolean recycle)`
