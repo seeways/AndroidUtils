@@ -24,9 +24,8 @@ taoyuan's AndroidUtils
 `compile 'com.github.seeways:AndroidUtils:1.2.0'`
 
 
-#2017.03.30
+# 2017.04.07
 
-- 将DialogUtils从utils包转移到dialog包
 - 删除 `@mipmap` 文件夹
 
 # 2017.3.27
