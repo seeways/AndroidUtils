@@ -12,7 +12,7 @@
         android:id="@+id/img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/dialog_loading_img_2"
+        android:src="@drawable/dialog_loading_img_2"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="20dp"
