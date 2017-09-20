@@ -19,46 +19,46 @@ public class DensityUtils {
      * dp转px 
      *  
      * @param context 
-     * @param dpval
-     * @return 
+     * @param dp
+     * @return px
      */  
-	public static int dp2px(Context context,float dpval){
-		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 
-				dpval, context.getResources().getDisplayMetrics());
+	public static int dp2px(Context context,float dp){
+		return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                dp, context.getResources().getDisplayMetrics());
 		
 	}
 	/** 
      * sp转px 
      *  
      * @param context 
-     * @param spval
-     * @return 
+     * @param sp
+     * @return px
      */ 
-	public static int sp2px(Context context,float spval){
+	public static int sp2px(Context context,float sp){
 		return (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
-				spval, context.getResources().getDisplayMetrics());
+                sp, context.getResources().getDisplayMetrics());
 	}
 	/** 
      * px转dp 
      *  
      * @param context 
-     * @param dpval
-     * @return 
+     * @param px
+     * @return dp
      */ 
-	public static float px2dp(Context context,float dpval){
+	public static float px2dp(Context context,float px){
 		final float scale=context.getResources().getDisplayMetrics().density;
-		return (dpval/scale);
+		return (px/scale);
 	}
 	/** 
      * px转sp 
      *  
      * @param context
-     * @param pxval
-	 * @return 
-     * @return 
-     */ 
-	public static float floatpx2sp(Context context,float pxval){
-		return (pxval/context.getResources().getDisplayMetrics().scaledDensity);
+     * @param px
+	 * @return sp
+     */
+//	@Deprecated
+	public static float px2sp(Context context,float px){
+		return (px/context.getResources().getDisplayMetrics().scaledDensity);
 	}
 	
 	

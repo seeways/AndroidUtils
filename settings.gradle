@@ -1,1 +1,1 @@
-include ':myutils'
+include ':myutils', ':mykotlinutils'

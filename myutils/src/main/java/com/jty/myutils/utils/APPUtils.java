@@ -3,9 +3,9 @@ package com.jty.myutils.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 
-/** 
+/**
  * APP辅助类
- * @author jty 
+ * @author jty
  */
 
 public class APPUtils {
@@ -22,14 +22,14 @@ public class APPUtils {
 					.applicationInfo
 					.labelRes;
 
-			return context.getResources().getString(labelRes); 
+			return context.getResources().getString(labelRes);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	
+
+
 	/**
 	 * 获取版本号
 	 * @param context
@@ -39,9 +39,9 @@ public class APPUtils {
 		try{
 			PackageInfo packageInfo=context.getPackageManager()
 					.getPackageInfo(context.getPackageName(), 0);
-			
+
 			return packageInfo.versionName;
-			
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -20,10 +20,12 @@ import java.util.List;
 /**
  * Created by JTY on 2017/3/15 0015
  * 如需获取设备相关，请Utils.init();
- * 本篇感谢http://blankj.com 布兰柯鸡大神
+ * come from http://blankj.com
  */
 
 public class DeviceUtils {
+
+
     private DeviceUtils(){
         throw new UnsupportedOperationException("cannot be instantiated");
     }
@@ -63,14 +65,17 @@ public class DeviceUtils {
     }
 
     /**
-     * 获取设备MAC地址
-     * <p>需添加权限 {@code <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>}</p>
-     * <p>需添加权限 {@code <uses-permission android:name="android.permission.INTERNET"/>}</p>
+     * Get Device MAC Address
      *
-     * @return MAC地址
+     * Need Add  Permission
+     * {@code <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>}
+     * {@code <uses-permission android:name="android.permission.INTERNET"/>}
+     *
+     * @param context
+     * @return MAC Address
      */
-    public static String getMacAddress() {
-        String macAddress = getMacAddressByWifiInfo();
+    public static String getMacAddress(Context context) {
+        String macAddress = getMacAddressByWifiInfo(context);
         if (!"02:00:00:00:00:00".equals(macAddress)) {
             return macAddress;
         }
@@ -86,15 +91,15 @@ public class DeviceUtils {
     }
 
     /**
-     * 获取设备MAC地址
-     * <p>需添加权限 {@code <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>}</p>
+     * Get Device MAC Address
+     * Need Add  Permission{@code <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>}
      *
-     * @return MAC地址
+     * @return MAC Address
      */
     @SuppressLint("HardwareIds")
-    private static String getMacAddressByWifiInfo() {
+    private static String getMacAddressByWifiInfo(Context context) {
         try {
-            WifiManager wifi = (WifiManager) Utils.getContext().getSystemService(Context.WIFI_SERVICE);
+            WifiManager wifi = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
             if (wifi != null) {
                 WifiInfo info = wifi.getConnectionInfo();
                 if (info != null) return info.getMacAddress();
