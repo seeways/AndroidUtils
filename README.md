@@ -1,7 +1,7 @@
 # AndroidUtils
 [![](https://jitpack.io/v/seeways/AndroidUtils.svg)](https://jitpack.io/#seeways/AndroidUtils)
 
-taoyuan's AndroidUtils
+A Basic Android Tools
 
 
 ## 使用
@@ -22,6 +22,11 @@ taoyuan's AndroidUtils
 
 2. app build.gradle下添加依赖
 `compile 'com.github.seeways:AndroidUtils:1.2.0'`
+
+
+# 2017.09.20
+- 优化myutils包代码
+- 新增kotlin依赖库(逐渐支持)
 
 
 # 2017.04.07
