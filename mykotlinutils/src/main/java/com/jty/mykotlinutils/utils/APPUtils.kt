@@ -12,9 +12,9 @@ import android.content.pm.PackageInfo
 object APPUtils {
 
     /**
-     * 获取应用程序名称
+     * Get APP Name
      * @param context
-     * @return
+     * @return string
      */
     fun getAppName(context: Context): String? {
         try {
@@ -33,9 +33,9 @@ object APPUtils {
 
 
     /**
-     * 获取版本号
+     * Get APP Version Name
      * @param context
-     * @return
+     * @return string
      */
     fun getVersionName(context: Context): String? {
         try {
@@ -52,9 +52,9 @@ object APPUtils {
     }
 
     /**
-     * 获得版本码
+     * Get APP Version Code
      * @param context
-     * @return
+     * @return int
      */
     fun getVersionCode(context: Context): Int {
         try {

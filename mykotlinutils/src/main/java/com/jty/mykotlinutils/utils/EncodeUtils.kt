@@ -9,6 +9,8 @@ import java.net.URLDecoder
 
 /**
  * Created by TaoYuan on 2017/9/20 0020.
+ *
+ * Encode
  */
 
 object EncodeUtils {

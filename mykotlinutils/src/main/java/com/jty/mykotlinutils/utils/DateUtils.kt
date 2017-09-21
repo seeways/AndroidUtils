@@ -25,7 +25,7 @@ object DateUtils {
     const val DF_YYYYMMDD_CH = "yyyy年MM月dd日"
     const val DF_YYYYMMDDHHMMSS = "yyyy-MM-dd HH:mm:ss"
 
-
+    @JvmStatic
     fun formatDate(date: Date, pattern: String): String = SimpleDateFormat(pattern).format(date)
     fun formatDate(date: Date, dateFormat: DateFormat): String = dateFormat.format(date)
     /**

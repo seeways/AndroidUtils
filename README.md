@@ -11,7 +11,7 @@ A Basic Android Tools
 
 如下：
 
-```java
+```gradle
 	allprojects {
 		repositories {
 			...
@@ -22,6 +22,11 @@ A Basic Android Tools
 
 2. app build.gradle下添加依赖
 `compile 'com.github.seeways:AndroidUtils:1.2.0'`
+
+
+# 2017.09.21
+- 完善Kotlin库
+- 如果有人用的话，Kotlin有不完善的地方请及时知会我
 
 
 # 2017.09.20
@@ -43,7 +48,7 @@ A Basic Android Tools
     1. 自定义压缩格式(普通用户推荐 `CompressFormat.PNG` )
     2. 可选是否回收(不写此参数默认false)
     3. 文件名合并至路径中(亦可直接用File)
-    ```java
+    ```
     boolean save(Bitmap src, String filePath, CompressFormat format)
 
     boolean save(Bitmap src, File file, CompressFormat format)

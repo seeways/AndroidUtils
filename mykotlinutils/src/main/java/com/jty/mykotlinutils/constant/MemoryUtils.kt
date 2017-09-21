@@ -7,24 +7,20 @@ package com.jty.kotlin.constant
  */
 
 object MemoryUtils {
-    /******************** 存储相关常量  */
-    /**
-     * Byte与Byte的倍数
-     */
+
+    /** BYTE */
     const val BYTE = 1
-    /**
-     * KB与Byte的倍数
-     */
+
+    /** BYTE * 1024 */
     const val KB = 1024
-    /**
-     * MB与Byte的倍数
-     */
+
+    /** KB * 1024 */
     const val MB = 1048576
-    /**
-     * GB与Byte的倍数
-     */
+
+    /** MB * 1024 */
     const val GB = 1073741824
 
+    /** Stored Unit */
     enum class MemoryUnit {
         BYTE,
         KB,

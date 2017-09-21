@@ -9,5 +9,6 @@ import java.util.*
  */
 fun main(args: Array<String>) {
     val currentTime = DateUtils.formatDate(Date(),SimpleDateFormat.getDateTimeInstance())
+    DateUtils.formatDate(Date(),DateUtils.DF_YYYYMMDDHHMMSS)
     println("currentTime==" + currentTime)
 }

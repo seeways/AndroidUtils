@@ -28,10 +28,10 @@ class ScreenUtils private constructor() {
     companion object {
 
         /**
-         * 获得屏幕高度
+         * Get Screen Height
          *
          * @param context
-         * @return
+         * @return int
          */
         fun getScreenHeight(context: Context): Int {
             val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
@@ -42,10 +42,10 @@ class ScreenUtils private constructor() {
         }
 
         /**
-         * 获得屏幕宽度
+         * Get Screen Width
          *
          * @param context
-         * @return
+         * @return int
          */
         fun getScreenWidth(context: Context): Int {
             val wm = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
@@ -55,10 +55,10 @@ class ScreenUtils private constructor() {
         }
 
         /**
-         * 获得状态栏的高度
+         * Get Status Height
          *
          * @param context
-         * @return
+         * @return int
          */
         fun getStatusHeight(context: Context): Int {
             var statusHeight = -1
@@ -78,11 +78,10 @@ class ScreenUtils private constructor() {
         }
 
         /**
-         * 获取当前屏幕截图，包含状态栏
+         * Shot With Screen Include StatusBar
          *
          * @param activity
-         * @return
-         * @return
+         * @return bitmap
          */
         fun snapShotWithStatusBar(activity: Activity): Bitmap {
             val view = activity.window.decorView
@@ -98,10 +97,10 @@ class ScreenUtils private constructor() {
         }
 
         /**
-         * 获取当前屏幕截图，不包含状态栏
+         * Shot With Screen Exclude StatusBar
          *
          * @param activity
-         * @return
+         * @return bitmap
          */
         fun snapShotWithoutStatusBar(activity: Activity): Bitmap {
             val view = activity.window.decorView
