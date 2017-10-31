@@ -23,15 +23,14 @@ A Basic Android Tools
 2. app build.gradle下添加依赖
 `compile 'com.github.seeways:AndroidUtils:1.2.0'`
 
-
-# 2017.09.21
-- 完善Kotlin库
-- 如果有人用的话，Kotlin有不完善的地方请及时知会我
+# 2017.10.31
+- HttpUtils的doPost方法新增类型选择
+- 新增BitmapUtils
+- Base64Utils单独成类
 
 
 # 2017.09.20
 - 优化myutils包代码
-- 新增kotlin依赖库(逐渐支持)
 
 
 # 2017.04.07

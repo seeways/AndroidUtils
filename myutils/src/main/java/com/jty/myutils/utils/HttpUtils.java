@@ -109,6 +109,9 @@ public class HttpUtils {
         return null;
     }
 
+    public static String doPost(String urlStr, String params) {
+        return doPost(urlStr,params,PropertyType.URLENCODED);
+    }
     /**
      * 有响应结果的Post
      *
@@ -117,11 +120,10 @@ public class HttpUtils {
      * @return 所代表远程资源的响应结果
      * @throws Exception
      */
-    public static String doPost(String urlStr, String params) {
+    public static String doPost(String urlStr, String params, String propertyType) {
         PrintWriter out = null;
         BufferedReader in = null;
         String result = null;
-
         try {
             URL url = new URL(urlStr);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -129,8 +131,7 @@ public class HttpUtils {
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
             conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type",
-                    "application/x-www-form-urlencoded");
+            conn.setRequestProperty("Content-Type", propertyType);
             conn.setRequestProperty("charset", "utf-8");
             conn.setUseCaches(false);
             // 发送POST请求必须设置如下两行
@@ -172,5 +173,10 @@ public class HttpUtils {
         return result;
     }
 
+    private interface PropertyType{
+        String URLENCODED = "application/x-www-form-urlencoded";
+        String JSON = "application/json";
+//        String URLENCODED = "application/x-www-form-urlencoded";
+    }
 
 }
