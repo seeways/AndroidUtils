@@ -21,7 +21,12 @@ A Basic Android Tools
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:1.2.0'`
+`compile 'com.github.seeways:AndroidUtils:2.0'`
+# 2018.3.27
+- 新增Base系列
+- 新增title系列
+- 升级优化gradle
+- 基本功能完善
 
 # 2017.10.31
 - HttpUtils的doPost方法新增类型选择
