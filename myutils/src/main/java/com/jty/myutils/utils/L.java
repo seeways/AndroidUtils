@@ -58,4 +58,28 @@ public class L {
         if (isDebug)
             Log.i(tag, msg);
     }
+
+    public static void showLarge(String msg) {
+        showLarge(msg, 4000, TAG);
+    }
+
+    public static void showLarge(String msg, int showLength) {
+        showLarge(msg, showLength, TAG);
+    }
+
+    public static void showLarge(String msg, int showLength, String tag) {
+        if (msg.length() > showLength) {
+
+            for(int i=0;i<msg.length();i+=showLength){
+                if(i+showLength<msg.length())
+                    e(tag, msg.substring(i, i+showLength));
+                else
+                    e(tag, msg.substring(i, msg.length()));
+            }
+
+        } else {
+            e(tag, msg);
+        }
+
+    }
 }

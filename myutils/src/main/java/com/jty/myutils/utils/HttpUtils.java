@@ -53,10 +53,15 @@ public class HttpUtils {
      */
     public static void doPostAsyn(final String url,
                                   final String params, final CallBack callBack) {
+        doPostAsyn(url, params,PropertyType.URLENCODED,callBack);
+    }
+
+    public static void doPostAsyn(final String url,
+                                  final String params, final String propertyType, final CallBack callBack) {
         new Thread() {
             public void run() {
                 try {
-                    String result = doPost(url, params);
+                    String result = doPost(url, params, propertyType);
                     if (callBack != null) {
                         callBack.onRequestComplete(result);
                     }
