@@ -1,8 +1,12 @@
 package com.jty.myutils.utils;
 
+import android.util.Base64;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -33,5 +37,23 @@ public class Base64Utils {
         }
         out.close();
         in.close();
+    }
+
+    /**
+     * 文件转base64
+     * @param path
+     * @return
+     * @throws Exception
+     */
+    public static String encodeBase64File(String path) throws Exception {
+        return encodeBase64File(new File(path));
+    }
+
+    public static String encodeBase64File(File file) throws IOException {
+        FileInputStream inputFile = new FileInputStream(file);
+        byte[] buffer = new byte[(int) file.length()];
+        inputFile.read(buffer);
+        inputFile.close();
+        return Base64.encodeToString(buffer, Base64.DEFAULT);
     }
 }
