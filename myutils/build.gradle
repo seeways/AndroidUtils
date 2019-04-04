@@ -23,9 +23,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleDynamicVersion
-//    implementation 'com.android.support:appcompat-v7:27+'
+    implementation 'com.android.support:appcompat-v7:27+'
     //noinspection GradleDynamicVersion
-//    implementation 'com.android.support:design:27+'
+    implementation 'com.android.support:design:27+'
 
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
