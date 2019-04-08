@@ -21,7 +21,13 @@ A Basic Android Tools
 ```
 
 2. app build.gradle下添加依赖
-`compile 'com.github.seeways:AndroidUtils:2.0'`
+`implementation 'com.github.seeways:AndroidUtils:3.2'`
+
+# 2019.4.8
+- 升级了gradle版本
+- 3.2带有 ButterKnife 10.1
+- 3.3是纯粹的工具类
+
 # 2018.3.27
 - 新增Base系列
 - 新增title系列
