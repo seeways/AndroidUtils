@@ -15,8 +15,6 @@ import android.widget.RelativeLayout;
 import com.jty.myutils.R;
 import com.jty.myutils.ui.StatusBarCompat;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by TaoYuan on 2018/3/26 0026.
@@ -34,8 +32,6 @@ public abstract class BaseActivity extends Activity {
      */
     protected final int TITLE_TYPE_IMG = 1;
 
-    private Unbinder unbinder;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +47,6 @@ public abstract class BaseActivity extends Activity {
         SetStatusBarColor();
 
         setContentView(getLayoutId());
-        //绑定ButterKnife
-        unbinder = ButterKnife.bind(this);
 
         this.initPresenter();
         this.initView();
@@ -104,7 +98,6 @@ public abstract class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().finishActivity(this);
-        unbinder.unbind();
 
     }
 
