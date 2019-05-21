@@ -3,10 +3,10 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.seeways'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 4
         versionName "3.0"
     }
@@ -22,11 +22,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //noinspection GradleDynamicVersion
-    implementation 'com.android.support:appcompat-v7:27+'
-    //noinspection GradleDynamicVersion
-    implementation 'com.android.support:design:27+'
 
-//    implementation 'com.jakewharton:butterknife:10.1.0'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    implementation 'com.android.support:appcompat-v7:28+'
+
+    implementation 'com.android.support:design:28+'
+
 }

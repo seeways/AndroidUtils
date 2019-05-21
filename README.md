@@ -23,32 +23,36 @@ A Basic Android Tools
 2. app build.gradle下添加依赖
 `implementation 'com.github.seeways:AndroidUtils:3.2'`
 
-# 2019.4.8
+## 2019.5.8
+- 删除冗余代码
+- 新增SocketUtils
+- NetUtils新增获取ip地址
+
+## 2019.4.8
 - 升级了gradle版本
 - 3.2带有 ButterKnife 10.1
 - 3.3是纯粹的工具类
 
-# 2018.3.27
+## 2018.3.27
 - 新增Base系列
 - 新增title系列
 - 升级优化gradle
 - 基本功能完善
 
-# 2017.10.31
+## 2017.10.31
 - HttpUtils的doPost方法新增类型选择
 - 新增BitmapUtils
 - Base64Utils单独成类
 
 
-# 2017.09.20
+## 2017.09.20
 - 优化myutils包代码
 
 
-# 2017.04.07
-
+## 2017.04.07
 - 删除 `@mipmap` 文件夹
 
-# 2017.3.27
+## 2017.03.27
 
 #### 图片帮助类ImageUtils更新部分如下：
 
@@ -131,7 +135,7 @@ A Basic Android Tools
     
 
 
-# 2017.3.22
+## 2017.3.22
 新增FileUtils
 
 - 文件工具类 FileUtils
@@ -150,7 +154,7 @@ A Basic Android Tools
 
 
 
-# 2017.3.20
+## 2017.3.20
 新增EncodeUtils，EncryptUtils，StringUtils
 
 - 字符串工具类 StringUtils
@@ -205,7 +209,7 @@ A Basic Android Tools
 
 
 
-# 2017.3.15
+## 2017.3.15
 新增DeviceUtils
 
 感谢Blankj，对Blankj的代码作了部分修改
@@ -231,7 +235,7 @@ A Basic Android Tools
 
 
     
-# 2017.3.7
+## 2017.3.7
 创建版本
 
 
@@ -412,7 +416,7 @@ A Basic Android Tools
     + String getLikeYear()
 
 
-# 2017.3.14
+## 2017.3.14
 - 增加2个等待进度条
 - 增加国际化支持
 

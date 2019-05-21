@@ -1,11 +1,20 @@
 package com.jty.myutils.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 
 /** 
  * 网络工具类
@@ -23,7 +32,7 @@ public class NetUtils {
 		ConnectivityManager connect=(ConnectivityManager) context.
 				getSystemService(Context.CONNECTIVITY_SERVICE);
 		if(connect!=null){
-			NetworkInfo networkInfo=connect.getActiveNetworkInfo();
+			@SuppressLint("MissingPermission") NetworkInfo networkInfo=connect.getActiveNetworkInfo();
 			if(networkInfo!=null && networkInfo.isConnected()){
 				if(networkInfo.getState() == NetworkInfo.State.CONNECTED){
 					return true;
@@ -36,6 +45,7 @@ public class NetUtils {
 	/** 
      * 判断是否是wifi连接 
      */  
+	@SuppressLint("MissingPermission")
 	public static boolean isWifi(Context context){
 		ConnectivityManager connect=(ConnectivityManager) context.
 				getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -44,7 +54,32 @@ public class NetUtils {
 		}
 		return connect.getActiveNetworkInfo().getType()==ConnectivityManager.TYPE_WIFI;
 	}
-	
+
+	/**
+	 * 获取Ip地址
+	 * @return net address
+	 */
+	public static String getIP(){
+
+		try {
+			for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+				NetworkInterface intf = en.nextElement();
+				for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();)
+				{
+					InetAddress inetAddress = enumIpAddr.nextElement();
+					if (!inetAddress.isLoopbackAddress() && (inetAddress instanceof Inet4Address))
+					{
+						return inetAddress.getHostAddress();
+					}
+				}
+			}
+		}
+		catch (SocketException ex){
+			ex.printStackTrace();
+		}
+		return null;
+	}
+
 	 /** 
      * 打开网络设置界面 
      */  
