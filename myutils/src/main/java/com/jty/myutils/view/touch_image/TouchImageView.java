@@ -42,7 +42,6 @@ public class TouchImageView extends AppCompatImageView {
     int oldMeasuredWidth, oldMeasuredHeight;
 
 
-
     ScaleGestureDetector mScaleDetector;
 
     Context context;
@@ -234,10 +233,10 @@ public class TouchImageView extends AppCompatImageView {
         fixTrans();
     }
 
-    public float getScale(){
+    public float getScale() {
         return saveScale;
     }
-    public void setScale(float saveScale){
+    public void setScale(float saveScale) {
         this.saveScale = saveScale;
     }
 }

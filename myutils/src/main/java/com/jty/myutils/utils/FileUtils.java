@@ -61,6 +61,7 @@ public class FileUtils {
     public static boolean createOrExistsFile(String filePath) {
         return createOrExistsFile(getFileByPath(filePath));
     }
+
     public static boolean createOrExistsFile(File file) {
         if (file == null) return false;
         // 如果存在，是文件则返回true，是目录则返回false
@@ -73,8 +74,6 @@ public class FileUtils {
             return false;
         }
     }
-
-    /**
 
     /**
      * 重命名文件
