@@ -3,6 +3,7 @@ package com.jty.myutils.utils;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.View;
 
 import com.jty.myutils.R;
 
@@ -37,6 +38,20 @@ public class DialogUtils{
         isExit.setButton(DialogInterface.BUTTON_NEGATIVE, cancelButtonText, listener);
         // 显示对话框
         isExit.show();
+    }
+
+    public static void CommonDialog(Context context , String title, View view, CharSequence confirmButtonText, CharSequence cancelButtonText, DialogInterface.OnClickListener listener){
+        // 创建退出对话框
+        AlertDialog dialog = new AlertDialog.Builder(context).create();
+        // 设置对话框标题
+        dialog.setTitle(title);
+        // 设置view
+        dialog.setView(view);
+        // 添加选择按钮并注册监听
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, confirmButtonText, listener);
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, cancelButtonText, listener);
+        // 显示对话框
+        dialog.show();
     }
 
     public static void HintDialog(Context context ,String msg, DialogInterface.OnClickListener listener){
