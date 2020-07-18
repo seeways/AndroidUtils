@@ -40,8 +40,9 @@ public class ConvertUtils {
      * @return hex string
      */
     public static String strToHexStr(String str) {
+        str = str.replace(" ", "");
         char[] chars = "0123456789ABCDEF".toCharArray();
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder();
         byte[] bs = str.getBytes();
         int bit;
         for (byte b : bs) {
@@ -60,6 +61,8 @@ public class ConvertUtils {
      * @return byte[]
      */
     public static byte[] hexStringToByte(String hex) {
+        hex = hex.replace(" ", "");
+        hex = hex.toUpperCase();
         int len = (hex.length() / 2);
         byte[] result = new byte[len];
         char[] achar = hex.toCharArray();
