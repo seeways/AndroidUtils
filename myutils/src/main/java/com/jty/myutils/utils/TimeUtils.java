@@ -10,47 +10,61 @@ import java.util.TimeZone;
  * Created by JTY on 2016/8/12 0012.
  */
 public class TimeUtils {
+    private static Date date = new Date();
+
+    public static void setDate(Date d) {
+        date = d;
+    }
+
+    public static String getTime(String pattern) {
+        return new SimpleDateFormat(pattern).format(date);
+    }
+
+    public static String getTime(String pattern, Date date) {
+        return new SimpleDateFormat(pattern).format(date);
+    }
+
     //获取时间戳
     public static String getTimeStemp() {
-        return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        return new SimpleDateFormat("yyyyMMddHHmmss").format(date);
     }
 
     // 获取当日时间戳
     public static String getDayTimeStemp() {
-        return new SimpleDateFormat("yyyyMMdd").format(new Date());
+        return new SimpleDateFormat("yyyyMMdd").format(date);
     }
 
     // 获取当月时间戳
     public static String getMonthStemp() {
-        return new SimpleDateFormat("yyyyMM").format(new Date());
+        return new SimpleDateFormat("yyyyMM").format(date);
     }
 
     //获得当前时间
     public static String getTime() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
     }
 
     //获得当前日期
     public static String getDay() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd").format(date);
     }
 
     //获得当月時間
     public static String getMonth() {
-        return new SimpleDateFormat("yyyy-MM").format(new Date());
+        return new SimpleDateFormat("yyyy-MM").format(date);
     }
 
     //获得当年时间
     public static String getYear() {
-        return new SimpleDateFormat("yyyy").format(new Date());
+        return new SimpleDateFormat("yyyy").format(date);
     }
 
 
     //获取东八区区时
     private static Calendar chinaCalendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));
-    private static int year = chinaCalendar.get(Calendar.YEAR);
-    private static int month = chinaCalendar.get(Calendar.MONTH) + 1;
-    private static int days = chinaCalendar.get(Calendar.DAY_OF_MONTH);
+    public static int year = chinaCalendar.get(Calendar.YEAR);
+    public static int month = chinaCalendar.get(Calendar.MONTH) + 1;
+    public static int days = chinaCalendar.get(Calendar.DAY_OF_MONTH);
 
     //获取年，年月，年月日
     public static String getDayTime() {
