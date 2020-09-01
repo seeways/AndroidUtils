@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,9 +29,7 @@ public class ProgressDialog {
      * @return loading dialog
      */
     public static Dialog loadingDialog1(Context context, String msg, boolean isCancelable) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        //get loading view
-        View view = inflater.inflate(R.layout.dialog_loading_1, null);
+        View view = setLoadingView(context, false);
         // loading layout
         LinearLayout layout = (LinearLayout) view.findViewById(R.id.dialog_loading_view);
         // tip text
@@ -79,9 +74,7 @@ public class ProgressDialog {
      * @return
      */
     public static Dialog loadingDialog2(Context context, String msg, boolean isCancelable) {
-
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.dialog_loading_2, null);
+        View v = setLoadingView(context, true);
         RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.dialog_view);
 
         //提示文字
@@ -104,6 +97,22 @@ public class ProgressDialog {
         window.setWindowAnimations(R.style.PopWindowAnimStyle);
         loadingDialog.show();
         return loadingDialog;
+    }
+
+    public static View setLoadingView(View view) {
+        return view;
+    }
+
+    public static View setLoadingView(Context context, int resource) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        return inflater.inflate(resource, null);
+    }
+
+    private static View setLoadingView(Context context, boolean isHorizontal) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.dialog_loading_1, null);
+        if (isHorizontal) view = inflater.inflate(R.layout.dialog_loading_2, null);
+        return view;
     }
 
 

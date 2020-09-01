@@ -79,6 +79,22 @@ public class T {
         toast.show();
     }
 
+    public static void showOnLooper(Context context, CharSequence message) {
+        try {
+            if (toast != null) {
+                toast.setText(message);
+            } else {
+                toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            }
+            toast.show();
+        } catch (Exception e) {
+            Looper.prepare();
+            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            toast.show();
+            Looper.loop();
+        }
+    }
+
     public static void show(Context context, int message) {
         show(context, message, false);
     }
@@ -91,6 +107,22 @@ public class T {
             else toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
         }
         toast.show();
+    }
+
+    public static void showOnLooper(Context context, int message) {
+        try {
+            if (toast != null) {
+                toast.setText(message);
+            } else {
+                toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            }
+            toast.show();
+        } catch (Exception e) {
+            Looper.prepare();
+            toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            toast.show();
+            Looper.loop();
+        }
     }
 
     public static void showToastOnUI(Activity activity, String msg) {
