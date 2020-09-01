@@ -4,5 +4,6 @@
 	<string name="dialog_title_tip">温馨提示</string>
 	<string name="confirm">确认</string>
 	<string name="cancel">取消</string>
+	<string name="loading">加载中…</string>
 
 </resources>

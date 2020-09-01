@@ -11,9 +11,16 @@ import java.util.TimeZone;
  */
 public class TimeUtils {
     private static Date date = new Date();
+    public static String pattern = "yyyy-MM-dd HH:mm:ss";
+    public static SimpleDateFormat format = new SimpleDateFormat(pattern);
 
     public static void setDate(Date d) {
         date = d;
+    }
+
+
+    public static SimpleDateFormat getFormat(String pattern) {
+        return new SimpleDateFormat(pattern);
     }
 
     public static String getTime(String pattern) {

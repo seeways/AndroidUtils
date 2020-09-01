@@ -25,12 +25,13 @@ import com.jty.myutils.R;
 public class ProgressDialog {
     /**
      * Loading Dialog 1
-     * @param context Context
-     * @param msg Show Message default:loading...
+     *
+     * @param context      Context
+     * @param msg          Show Message default:loading...
      * @param isCancelable is CancelAble
      * @return loading dialog
      */
-    public static Dialog loadingDialog1(Context context, String msg,boolean isCancelable) {
+    public static Dialog loadingDialog1(Context context, String msg, boolean isCancelable) {
         LayoutInflater inflater = LayoutInflater.from(context);
         //get loading view
         View view = inflater.inflate(R.layout.dialog_loading_1, null);
@@ -38,7 +39,7 @@ public class ProgressDialog {
         LinearLayout layout = (LinearLayout) view.findViewById(R.id.dialog_loading_view);
         // tip text
         TextView tipTextView = (TextView) view.findViewById(R.id.tipTextView);
-        if(msg!=null){
+        if (msg != null) {
             tipTextView.setText(msg);// set info
         }
 
@@ -71,31 +72,25 @@ public class ProgressDialog {
 
     /**
      * Loading Dialog 2
-     * @param context  Context
-     * @param msg  Show Message
-     * @param isTransBg isTransBg
+     *
+     * @param context      Context
+     * @param msg          Show Message
      * @param isCancelable isCancelable
      * @return
      */
-    public static Dialog loadingDialog2(Context context, String msg, boolean isTransBg, boolean isCancelable) {
+    public static Dialog loadingDialog2(Context context, String msg, boolean isCancelable) {
 
         LayoutInflater inflater = LayoutInflater.from(context);
         View v = inflater.inflate(R.layout.dialog_loading_2, null);
         RelativeLayout layout = (RelativeLayout) v.findViewById(R.id.dialog_view);
 
-        //图片
-        ImageView spaceshipImage = (ImageView) v.findViewById(R.id.img);
         //提示文字
         TextView tipTextView = (TextView) v.findViewById(R.id.tipTextView);
-        //旋转动画
-        Animation hyperspaceJumpAnimation = AnimationUtils.loadAnimation(context, R.anim.rotate_animation);
-        //显示动画
-        spaceshipImage.startAnimation(hyperspaceJumpAnimation);
         //使用默认值
-        if(msg!=null){
+        if (msg != null) {
             tipTextView.setText(msg);// set info
         }
-        Dialog loadingDialog = new Dialog(context, isTransBg ? R.style.TransDialogStyle : R.style.MyDialogStyle2);    // 创建自定义样式dialog
+        Dialog loadingDialog = new Dialog(context, R.style.MyDialogStyle2);
         loadingDialog.setContentView(layout);
         loadingDialog.setCancelable(isCancelable);
         loadingDialog.setCanceledOnTouchOutside(false);
@@ -114,6 +109,7 @@ public class ProgressDialog {
 
     /**
      * Close Dialog
+     *
      * @param dialog dialog
      */
     public static void closeDialog(Dialog dialog) {
@@ -122,4 +118,4 @@ public class ProgressDialog {
         }
     }
 
-    }
+}

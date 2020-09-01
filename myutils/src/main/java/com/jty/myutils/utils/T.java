@@ -70,21 +70,13 @@ public class T {
     }
 
     public static void show(Context context, CharSequence message, boolean isLong) {
-        try {
-            if (toast != null) {
-                toast.setText(message);
-            } else {
-                if (isLong) toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
-                else toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-            }
-            toast.show();
-        } catch (Exception e) {
-            Looper.prepare();
+        if (toast != null) {
+            toast.setText(message);
+        } else {
             if (isLong) toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
             else toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-            toast.show();
-            Looper.loop();
         }
+        toast.show();
     }
 
     public static void show(Context context, int message) {
@@ -92,21 +84,13 @@ public class T {
     }
 
     public static void show(Context context, int message, boolean isLong) {
-        try {
-            if (toast != null) {
-                toast.setText(message);
-            } else {
-                if (isLong) toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
-                else toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-            }
-            toast.show();
-        } catch (Exception e) {
-            Looper.prepare();
+        if (toast != null) {
+            toast.setText(message);
+        } else {
             if (isLong) toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
             else toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-            toast.show();
-            Looper.loop();
         }
+        toast.show();
     }
 
     public static void showToastOnUI(Activity activity, String msg) {
