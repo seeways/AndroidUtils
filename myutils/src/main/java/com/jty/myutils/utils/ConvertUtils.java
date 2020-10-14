@@ -174,5 +174,46 @@ public class ConvertUtils {
         return result;
     }
 
+    /**
+     * 十六进制byte转十进制int
+     *
+     * @param src bytes
+     * @return 十进制 int
+     */
+    public static int bytesToInt(byte[] src) {
+        int length = src.length * 2;
+        int[] ints = new int[length];
+        int tempLen = 0;
+        for (byte b : src) {
+            ints[tempLen] = (b & 0xF0) >> 4;
+            ints[tempLen + 1] = (b & 0x0F);
+            tempLen += 2;
+        }
+        int result = 0;
+        for (int anInt : ints) {
+            length--;
+            result += anInt * Math.pow(16, length);
+        }
+        return result;
+    }
+
+
+    /**
+     * 十进制数字转十六进制byte
+     *
+     * @param src byte
+     * @return 十进制数字
+     */
+    public static String IntToBytes(int src) {
+        String temp = Integer.toHexString(src);
+        int len = temp.length();
+        if (len == 1) {
+            temp = "0" + temp;
+        } else if (len == 8) {
+            temp = temp.substring(6);
+        }
+        return temp;
+    }
+
 
 }

@@ -169,7 +169,7 @@ public class FileUtils {
         return list;
     }
 
-    private static List<File> listFilesInDirWithFilter(File dir, String suffix) {
+    public static List<File> listFilesInDirWithFilter(File dir, String suffix) {
         if (dir == null || !isDir(dir)) return null;
         List<File> list = new ArrayList<>();
         File[] files = dir.listFiles();
@@ -213,7 +213,7 @@ public class FileUtils {
      * @param is 输入流
      * @return outputStream子类
      */
-    private static ByteArrayOutputStream input2OutputStream(InputStream is) {
+    public static ByteArrayOutputStream input2OutputStream(InputStream is) {
         if (is == null) return null;
         try {
             ByteArrayOutputStream os = new ByteArrayOutputStream();
@@ -333,7 +333,7 @@ public class FileUtils {
     }
 
 
-    private static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    public static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /**
      * byteArr转hexString
@@ -343,7 +343,7 @@ public class FileUtils {
      * @param bytes 字节数组
      * @return 16进制大写字符串
      */
-    private static String bytes2HexString(byte[] bytes) {
+    public static String bytes2HexString(byte[] bytes) {
         if (bytes == null) return null;
         int len = bytes.length;
         if (len <= 0) return null;
@@ -363,7 +363,7 @@ public class FileUtils {
      * @return 合适内存大小
      */
     @SuppressLint("DefaultLocale")
-    private static String byte2FitMemorySize(long byteNum) {
+    public static String byte2FitMemorySize(long byteNum) {
         if (byteNum < 0) {
             return "shouldn't be less than zero!";
         } else if (byteNum < MemoryUtils.KB) {
