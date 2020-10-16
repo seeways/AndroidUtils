@@ -63,6 +63,7 @@ public class ConvertUtils {
     public static byte[] hexStringToByte(String hex) {
         hex = hex.replace(" ", "");
         hex = hex.toUpperCase();
+        if (hex.length() % 2 == 1) hex = "0" + hex;
         int len = (hex.length() / 2);
         byte[] result = new byte[len];
         char[] achar = hex.toCharArray();
@@ -167,6 +168,29 @@ public class ConvertUtils {
             tempLen += 2;
         }
         double result = 0;
+        for (int anInt : ints) {
+            length--;
+            result += anInt * Math.pow(16, length);
+        }
+        return result;
+    }
+
+    /**
+     * 十六进制byte转十进制数字long
+     *
+     * @param src bytes
+     * @return 十进制long
+     */
+    private long bytesToLong(byte[] src) {
+        int length = src.length * 2;
+        int[] ints = new int[length];
+        int tempLen = 0;
+        for (byte b : src) {
+            ints[tempLen] = (b & 0xF0) >> 4;
+            ints[tempLen + 1] = (b & 0x0F);
+            tempLen += 2;
+        }
+        long result = 0;
         for (int anInt : ints) {
             length--;
             result += anInt * Math.pow(16, length);
