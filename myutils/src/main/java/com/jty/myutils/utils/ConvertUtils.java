@@ -181,7 +181,7 @@ public class ConvertUtils {
      * @param src bytes
      * @return 十进制long
      */
-    private long bytesToLong(byte[] src) {
+    public static long bytesToLong(byte[] src) {
         int length = src.length * 2;
         int[] ints = new int[length];
         int tempLen = 0;
