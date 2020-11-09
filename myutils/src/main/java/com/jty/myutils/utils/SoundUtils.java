@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 
 import java.io.IOException;
 
@@ -56,4 +60,39 @@ public class SoundUtils {
             assetManager = null;
         }
     }
+
+
+    // 获取系统铃声
+    public static Ringtone getSystemSound(Context context) {
+        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        Ringtone mRingtone = RingtoneManager.getRingtone(context, uri);//通过Uri 来获取提示音的实例对象
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            mRingtone.setLooping(false);
+        }
+        return mRingtone;
+    }
+
+    public static Ringtone getSystemSound(Context context, int type) {
+        Uri uri = RingtoneManager.getDefaultUri(type);
+        Ringtone mRingtone = RingtoneManager.getRingtone(context, uri);//通过Uri 来获取提示音的实例对象
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            mRingtone.setLooping(false);
+        }
+        return mRingtone;
+    }
+
+//    //设置震动
+//    public static void setVibrator(Context context) {
+//        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+//        try {
+//            vibrator.vibrate(500);//震动时长 ms
+//        } catch (NullPointerException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            L.e("MissingPermission");
+//        }
+//
+//    }
+
+
 }

@@ -10,13 +10,8 @@ import java.util.TimeZone;
  * Created by JTY on 2016/8/12 0012.
  */
 public class TimeUtils {
-    private static Date date = new Date();
     public static String pattern = "yyyy-MM-dd HH:mm:ss";
     public static SimpleDateFormat format = new SimpleDateFormat(pattern);
-
-    public static void setDate(Date d) {
-        date = d;
-    }
 
 
     public static SimpleDateFormat getFormat(String pattern) {
@@ -24,7 +19,7 @@ public class TimeUtils {
     }
 
     public static String getTime(String pattern) {
-        return new SimpleDateFormat(pattern).format(date);
+        return new SimpleDateFormat(pattern).format(new Date());
     }
 
     public static String getTime(String pattern, Date date) {
@@ -33,37 +28,37 @@ public class TimeUtils {
 
     //获取时间戳
     public static String getTimeStemp() {
-        return new SimpleDateFormat("yyyyMMddHHmmss").format(date);
+        return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
     }
 
     // 获取当日时间戳
     public static String getDayTimeStemp() {
-        return new SimpleDateFormat("yyyyMMdd").format(date);
+        return new SimpleDateFormat("yyyyMMdd").format(new Date());
     }
 
     // 获取当月时间戳
     public static String getMonthStemp() {
-        return new SimpleDateFormat("yyyyMM").format(date);
+        return new SimpleDateFormat("yyyyMM").format(new Date());
     }
 
     //获得当前时间
     public static String getTime() {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     }
 
     //获得当前日期
     public static String getDay() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(date);
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
     //获得当月時間
     public static String getMonth() {
-        return new SimpleDateFormat("yyyy-MM").format(date);
+        return new SimpleDateFormat("yyyy-MM").format(new Date());
     }
 
     //获得当年时间
     public static String getYear() {
-        return new SimpleDateFormat("yyyy").format(date);
+        return new SimpleDateFormat("yyyy").format(new Date());
     }
 
 
