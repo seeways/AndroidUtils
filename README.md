@@ -25,6 +25,12 @@ A Basic Android Tools
 2. app build.gradle下添加依赖
 `implementation 'com.github.seeways:AndroidUtils:3.2'`
 
+## 2021.6.14
+1. 开始适配kotlin，java版本不再维护
+2. 新增PermissionX权限库代替PermissionUtils
+3. kotlin新增Toast和Log库
+
+
 ## 2019.5.8
 - 删除冗余代码
 - 新增SocketUtils
