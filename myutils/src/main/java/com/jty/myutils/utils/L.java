@@ -46,18 +46,20 @@ public class L {
 
     public static void d(String tag, String msg) {
         if (isDebug)
-            Log.i(tag, msg);
-    }
-
-    public static void e(String tag, String msg) {
-        if (isDebug)
-            Log.i(tag, msg);
+            Log.d(tag, msg);
     }
 
     public static void v(String tag, String msg) {
         if (isDebug)
-            Log.i(tag, msg);
+            Log.v(tag, msg);
     }
+
+    public static void e(String tag, String msg) {
+        if (isDebug)
+            Log.e(tag, msg);
+    }
+
+
 
     public static void showLarge(String msg) {
         showLarge(msg, 4000, TAG);

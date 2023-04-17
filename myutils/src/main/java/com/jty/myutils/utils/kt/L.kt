@@ -29,15 +29,15 @@ object L {
     }
 
     fun d(tag: String = TAG, msg: String) {
-        if (isDebug) Log.i(tag, msg)
+        if (isDebug) Log.d(tag, msg)
     }
 
     fun v(tag: String = TAG, msg: String) {
-        if (isDebug) Log.i(tag, msg)
+        if (isDebug) Log.v(tag, msg)
     }
 
     fun e(tag: String = TAG, msg: String) {
-        if (isDebug) Log.i(tag, msg)
+        if (isDebug) Log.e(tag, msg)
     }
 
 
