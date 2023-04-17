@@ -28,15 +28,17 @@ public class L {
             Log.d(TAG, msg);
     }
 
+    public static void v(String msg) {
+        if (isDebug)
+            Log.v(TAG, msg);
+    }
+
     public static void e(String msg) {
         if (isDebug)
             Log.e(TAG, msg);
     }
 
-    public static void v(String msg) {
-        if (isDebug)
-            Log.v(TAG, msg);
-    }
+
 
     // 下面是传入自定义tag的函数
     public static void i(String tag, String msg) {
