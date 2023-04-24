@@ -30,6 +30,9 @@ A Basic Android Tools
 2. 新增PermissionX权限库代替PermissionUtils
 3. kotlin新增Toast和Log库
 
+## 2023.4.24
+- 修复了部分bug
+- 添加开源认证
 
 ## 2019.5.8
 - 删除冗余代码
